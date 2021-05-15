@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller_Page1">
+   <children>
+      <Label layoutX="199.0" layoutY="35.0" text="Page1">
+         <font>
+            <Font size="78.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtfield" layoutX="219.0" layoutY="187.0" />
+      <Button layoutX="222.0" layoutY="257.0" mnemonicParsing="false" onAction="#button_action" prefHeight="27.0" prefWidth="151.0" text="click to change" />
+   </children>
+</AnchorPane>

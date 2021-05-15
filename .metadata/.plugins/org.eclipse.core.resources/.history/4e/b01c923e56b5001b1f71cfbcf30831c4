@@ -1,0 +1,63 @@
+package application;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+
+public class SceneController {
+
+	@FXML
+	Label displayLabel;
+	private String display = "";
+	
+	public void zero(){
+		displayLabel.setText(display+"1");
+		display+="1";
+	}
+	
+	public void one(){
+		displayLabel.setText(display+"1");
+		display+="1";
+	}
+	
+	public void two(){
+		displayLabel.setText(display+"1");
+		display+="1";
+	}
+	
+	public void three(){
+		displayLabel.setText(display+"1");
+		display+="1";
+	}
+	
+	public void four(){
+		displayLabel.setText(display+"1");
+		display+="1";
+	}
+	
+	public void five(){
+		displayLabel.setText(display+"1");
+		display+="1";
+	}
+	
+	public void six(){
+		displayLabel.setText(display+"1");
+		display+="1";
+	}
+	
+	public void seven(){
+		displayLabel.setText(display+"1");
+		display+="1";
+	}
+	
+	public void eight(){
+		displayLabel.setText(display+"1");
+		display+="1";
+	}
+	
+	public void nine(){
+		displayLabel.setText(display+"1");
+		display+="1";
+	}
+	
+	
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Button fx:id="up_button" layoutX="273.0" layoutY="52.0" mnemonicParsing="false" onAction="#up" text="up" />
+      <Button fx:id="right_button" layoutX="508.0" layoutY="187.0" mnemonicParsing="false" onAction="#right" text="right" />
+      <Button fx:id="left_button" layoutX="43.0" layoutY="187.0" mnemonicParsing="false" onAction="#left" text="left" />
+      <Button fx:id="down_button" layoutX="273.0" layoutY="331.0" mnemonicParsing="false" onAction="#down" text="down" />
+      <Circle fx:id="myCircle" fill="DODGERBLUE" layoutX="289.0" layoutY="200.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="389.0" layoutY="52.0" text="hello world">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

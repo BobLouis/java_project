@@ -1,0 +1,16 @@
+package application;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+
+public class MainPageCon {
+
+	@FXML
+	Label nameLabel;
+	
+	public void displayName() {
+		System.out.println("in main");
+//		nameLabel.setText("Hello: "+username );
+	}
+	
+}

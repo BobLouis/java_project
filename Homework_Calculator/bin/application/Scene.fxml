@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="371.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SceneController">
+   <children>
+      <Label fx:id="resultLabel" layoutX="44.0" layoutY="110.0" prefHeight="62.0" prefWidth="371.0" textAlignment="JUSTIFY" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Button layoutX="48.0" layoutY="213.0" mnemonicParsing="false" onAction="#clearAll" prefHeight="45.0" prefWidth="68.0" text="AC">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="displayLabel" layoutX="12.0" layoutY="54.0" prefHeight="32.0" prefWidth="356.0" />
+      <Button layoutX="122.0" layoutY="213.0" mnemonicParsing="false" onAction="#clearEntry" text="CE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="267.0" layoutY="213.0" mnemonicParsing="false" onAction="#divide" prefHeight="45.0" prefWidth="47.0" text="/">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="197.0" layoutY="213.0" mnemonicParsing="false" onAction="#backspace" text="&lt;-">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="197.0" layoutY="279.0" mnemonicParsing="false" onAction="#three" text="3" AnchorPane.bottomAnchor="256.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="279.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="267.0" layoutY="279.0" mnemonicParsing="false" onAction="#mutiple" prefHeight="45.0" prefWidth="47.0" text="*">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="122.0" layoutY="279.0" mnemonicParsing="false" onAction="#two" prefHeight="45.0" prefWidth="47.0" text="2">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="48.0" layoutY="279.0" mnemonicParsing="false" onAction="#one" prefHeight="45.0" prefWidth="46.0" text="1">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="197.0" layoutY="337.0" mnemonicParsing="false" onAction="#six" text="6">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="267.0" layoutY="337.0" mnemonicParsing="false" onAction="#minus" prefHeight="45.0" prefWidth="47.0" text="-">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="122.0" layoutY="337.0" mnemonicParsing="false" onAction="#five" text="5">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="48.0" layoutY="337.0" mnemonicParsing="false" onAction="#four" prefHeight="45.0" prefWidth="40.0" text="4">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="197.0" layoutY="395.0" mnemonicParsing="false" onAction="#nine" text="9">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="267.0" layoutY="395.0" mnemonicParsing="false" onAction="#plus" text="+">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="122.0" layoutY="395.0" mnemonicParsing="false" onAction="#eight" text="8">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="48.0" layoutY="395.0" mnemonicParsing="false" onAction="#seven" text="7">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="123.0" layoutY="464.0" mnemonicParsing="false" onAction="#zero" prefHeight="45.0" prefWidth="47.0" text="0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="268.0" layoutY="464.0" mnemonicParsing="false" onAction="#equal" text="=">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="198.0" layoutY="464.0" mnemonicParsing="false" onAction="#dot" prefHeight="45.0" prefWidth="47.0" text=".">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

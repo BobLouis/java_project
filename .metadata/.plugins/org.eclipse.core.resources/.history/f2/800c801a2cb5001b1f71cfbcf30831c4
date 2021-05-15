@@ -1,0 +1,17 @@
+package application;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+
+public class SceneController {
+
+	@FXML
+	Label displayLabel;
+	private String display = "";
+	
+	public void one(){
+		displayLabel.setText(display+"1");
+		display+="1";
+	}
+	
+}

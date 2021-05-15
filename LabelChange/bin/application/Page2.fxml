@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller_Page2">
+   <children>
+      <Label layoutX="218.0" layoutY="37.0" text="Page 2">
+         <font>
+            <Font size="56.0" />
+         </font>
+      </Label>
+      <Label fx:id="label" layoutX="8.0" layoutY="162.0" prefHeight="91.0" prefWidth="588.0" text="Text is here" textFill="#835454" textOverrun="CLIP">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
