@@ -102,10 +102,16 @@ public class SceneController {
 	}
 	
 	public void dot() {
-		
+		System.out.println(".");
 		if(!(result.indexOf('.')>-1)) {
-			result+=".";
-			resultLabel.setText(result);
+			if(result.length()==0) {
+				result="0.";
+				resultLabel.setText(result);
+			}else {
+				result+=".";
+				resultLabel.setText(result);
+			}
+			
 		}
 		
 	}
@@ -168,23 +174,36 @@ public class SceneController {
 		
 	}
 	
+	
 	public void equal() {
-		System.out.println("=");
-		display="";
+		CalculateList cal= new CalculateList();
+		display+=result;
+		result =cal.calculate(display);
+		System.out.println(result);
+		if(result.equals("Infinity")) {
+			result="Error";
+			System.out.println("in");
+		}
+			
 		displayLabel.setText(display);
-		
-		result = "";
 		resultLabel.setText(result);
 	}
 	
 	public void backspace() {
+		
 		if(!result.isEmpty()) {
-			System.out.println("<-");
-			System.out.println(result.charAt(result.length()-1));
+			System.out.println("re<-");
 			result=result.substring(0, result.length() - 1);
 			resultLabel.setText(result);
+		}else {
+			if(!display.isEmpty()) {
+				System.out.println("di<-");
+				display=display.substring(0,display.length()-1);
+				displayLabel.setText(display);
+			}
+
 		}
-		
+				
 		
 	}
 	
@@ -221,27 +240,7 @@ public class SceneController {
 		}
 	}
 	
-	public static double calculate(double num1,double num2,char op) {
-		double answer=0;
-		switch(op) {
-			case '+':
-				answer = num1+num2;
-				break;
-			case '-':
-				answer = num1-num2;
-				break;
-			case '*':
-				answer = num1*num2;
-				break;
-			case '/':
-				answer = num1/num2;
-				break;
-			default:
-				error = true;
-				break;
-		}
-		return answer;
-	}
+	
 	
 	
 	

@@ -10,7 +10,7 @@
    <children>
       <Label fx:id="resultLabel" layoutX="44.0" layoutY="110.0" prefHeight="62.0" prefWidth="371.0" textAlignment="JUSTIFY" AnchorPane.rightAnchor="0.0">
          <font>
-            <Font size="39.0" />
+            <Font size="96.0" />
          </font>
       </Label>
       <Button layoutX="48.0" layoutY="213.0" mnemonicParsing="false" onAction="#clearAll" prefHeight="45.0" prefWidth="68.0" text="AC">
@@ -18,7 +18,10 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Label fx:id="displayLabel" layoutX="12.0" layoutY="54.0" prefHeight="32.0" prefWidth="356.0" />
+      <Label fx:id="displayLabel" layoutX="12.0" layoutY="54.0" prefHeight="32.0" prefWidth="356.0">
+         <font>
+            <Font size="51.0" />
+         </font></Label>
       <Button layoutX="122.0" layoutY="213.0" mnemonicParsing="false" onAction="#clearEntry" text="CE">
          <font>
             <Font size="24.0" />
@@ -30,11 +33,6 @@
          </font>
       </Button>
       <Button layoutX="197.0" layoutY="213.0" mnemonicParsing="false" onAction="#backspace" text="&lt;-">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Button>
-      <Button layoutX="197.0" layoutY="279.0" mnemonicParsing="false" onAction="#three" text="3" AnchorPane.bottomAnchor="256.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="279.0">
          <font>
             <Font size="24.0" />
          </font>
@@ -105,6 +103,11 @@
          </font>
       </Button>
       <Button layoutX="198.0" layoutY="464.0" mnemonicParsing="false" onAction="#dot" prefHeight="45.0" prefWidth="47.0" text=".">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="197.0" layoutY="279.0" mnemonicParsing="false" onAction="#three" prefHeight="45.0" prefWidth="47.0" text="3">
          <font>
             <Font size="24.0" />
          </font>
