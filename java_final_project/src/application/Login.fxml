@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#login" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+   <children>
+      <Label layoutX="120.0" layoutY="150.0" text="username">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameTextField" layoutX="272.0" layoutY="152.0" />
+      <Button layoutX="330.0" layoutY="266.0" mnemonicParsing="false" onAction="#login" text="login" />
+      <Label layoutX="121.0" layoutY="217.0" text="student ID">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <TextField fx:id="passwordTextField" layoutX="272.0" layoutY="219.0" />
+   </children>
+</AnchorPane>
