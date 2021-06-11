@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -24,48 +25,66 @@ public class LoginController {
 	TextField nameTextField;
 	@FXML
 	TextField passwordTextField;
-
+	@FXML
+	Label warningLabel;
+	
+	
+		
+	
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
 
+	private final static int userNum = 10;
+	private int userExist = -1;
+	private boolean IdCorr = false;
+	
+	
 	public void login(ActionEvent event) throws IOException {
 		ExcelReader rc=new ExcelReader();
 		Student [] student = new Student[10];
-		student[0] = new Student("wqe","qwe");
-//		for(int i=0;i<10;++i) {
-//			student[i].setName(rc.getName(i+1));
-//			student[i].setId(rc.getId(i+1));
-//		}
-		System.out.println(rc.getId(1));
-		System.out.println(rc.getName(1));
+		for(int i=0;i<10;++i) {
+			student[i] = new Student(rc.getName(i),rc.getId(i));
+		}
+		userExist = -1;
+		IdCorr = false;
+		System.out.println(student[0].getName());
+		System.out.println(student[0].getId());
 		String username = nameTextField.getText();
-		String password = passwordTextField.getText();
-
-		// write file
-		try {
-			PrintWriter writer = new PrintWriter(new FileOutputStream(
-					"/Users/kounuki/eclipse-workspace/java_final_project/src/Resources/account.txt", true));
-			writer.println(username);
-			writer.flush();
-			writer.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+		String Id = passwordTextField.getText();
+		
+		for (int i=0;i<10;++i) {
+			if(username.equals(student[i].getName())) {
+				userExist = i;
+			}
+		}
+		
+		if (userExist > -1) {
+			//user exist check the Id is correct
+			IdCorr = student[userExist].getId().equals(Id);
+		}
+		System.out.println(userExist);
+		System.out.println(IdCorr);
+		if(userExist == -1) {
+			warningLabel.setText("user not exist!!");
+		}
+		if(userExist > -1 && IdCorr == false) {
+			warningLabel.setText("student Id incorrect. Please try again");
 		}
 		
 		
-		//read file
+		if(IdCorr) {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Notice.fxml"));
+			root = loader.load();
+
+			NoticeController notice = loader.getController();
+			notice.displayName(username);
+
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		}
 		
-
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("Notice.fxml"));
-		root = loader.load();
-
-		NoticeController notice = loader.getController();
-		notice.displayName(username);
-
-		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
 	}
 }

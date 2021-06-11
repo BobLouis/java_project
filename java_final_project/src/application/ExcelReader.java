@@ -26,14 +26,14 @@ public class ExcelReader
 public String getId(int num) {
 	//start from 0
 	ExcelReader id=new ExcelReader();
-	String value = id.ReadCellDataString(num,1);
+	String value = id.ReadCellDataString(num+1,1);
 	return value;
 }
 
 public String getName(int num) {
 	//start from 0
 	ExcelReader name=new ExcelReader();
-	String value = name.ReadCellDataString(num,0);
+	String value = name.ReadCellDataString(num+1,0);
 	return value;
 }
 //read the 
