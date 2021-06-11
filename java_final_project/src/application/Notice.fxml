@@ -8,10 +8,20 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NoticeController">
    <children>
-      <Label fx:id="nameLabel" layoutX="240.0" layoutY="63.0" text="Hello ">
+      <Label fx:id="nameLabel" layoutX="32.0" layoutY="10.0" prefHeight="47.0" prefWidth="536.0" text="Hello ">
          <font>
-            <Font size="52.0" />
+            <Font size="20.0" />
          </font>
       </Label>
+      <TextArea layoutX="24.0" layoutY="57.0" prefHeight="269.0" prefWidth="556.0" text="•  Due to the Covid-19 we change our final exam to online test.&#10;•  The  exam will have 170 mins , hand in early is allowed.&#10;•  Exam will start at 6/21 9:10 please hand in the result &#10;before 12:00 PM&#10;•  The result will generate after you finish the &#10;exam in your destop&#10;•  Don't try to tamper the result , or you'll be punished. &#10;We have encoded mechanism to the result.">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="237.0" layoutY="344.0" mnemonicParsing="false" onAction="#start" text="Start the exam">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

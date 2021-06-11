@@ -7,5 +7,6 @@ module java_final_project {
 	requires poi.ooxml.schemas;
 	requires commons.collections4;
 	requires poi;
+	requires javafx.base;
 	opens application to javafx.graphics, javafx.fxml;
 }
