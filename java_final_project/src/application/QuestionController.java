@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 import java.util.LinkedList;
+import java.util.Random;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -59,25 +60,33 @@ public class QuestionController {
 	};
 	
 	int[] answer = {1,2,3,4  ,4,3,4 ,4,1,3 ,2,2,4};
-	int inputOption = 0;
-	LinkedList<Integer> inputOptionArr = new LinkedList<>();
-	
 	private int Qall = answer.length;
 	private int Qcount = 0;
-	
+	int inputOption = 0;
+	int inputOptionArr[] = new int[Qall];
+	int questionOrder[]  = new int[Qall];
+	int answerInOrder[]  = new int[Qall]; 
 	private boolean isStart = true;
-	
+		
 	
 	public void nextQuestion(ActionEvent event) throws IOException {
 		//check if the option is selected
 		if(inputOption>0 || isStart==true) {
 			++Qcount;
+			
+			if(isStart)
+				orderGenerate();
 			//save the previous option
-			inputOptionArr.add(inputOption);
+			if(!isStart)
+				inputOptionArr[Qcount-2]=inputOption;
 			inputOption = 0;  //reset the inputOption 0-> no input
 			Caution.setText("");
 			if(Qcount>Qall) {
-				System.out.println(inputOptionArr);
+				System.out.println("");
+				for(int i=0;i<Qall;++i)
+					System.out.print(inputOptionArr[i]+"");
+				
+				
 				end(event);
 			}
 			//reset all the option
@@ -88,11 +97,11 @@ public class QuestionController {
 
 			Qnumber.setText("Question "+(Qcount)+"/"+(Qall));
 			if(Qcount<Qall) {
-				Qarea.setText(question[Qcount-1][0]);
-				Abox.setText(question[Qcount-1][1]);
-				Bbox.setText(question[Qcount-1][2]);
-				Cbox.setText(question[Qcount-1][3]);
-				Dbox.setText(question[Qcount-1][4]);
+				Qarea.setText(question[questionOrder[Qcount-1]][0]);
+				Abox.setText (question[questionOrder[Qcount-1]][1]);
+				Bbox.setText (question[questionOrder[Qcount-1]][2]);
+				Cbox.setText (question[questionOrder[Qcount-1]][3]);
+				Dbox.setText (question[questionOrder[Qcount-1]][4]);
 			}
 			isStart = false;
 		}else {
@@ -101,6 +110,32 @@ public class QuestionController {
 		}
 		
 	}
+	
+	private void orderGenerate() {
+		for(int i=0;i<Qall;++i) {
+			questionOrder[i]=i;
+		}
+		int position = 0;
+		int temp = 0;
+		
+		Random rgen = new Random();  // Random number generator		
+		for(int i=0;i<Qall;++i) {
+			position = rgen.nextInt(Qall);
+			temp = questionOrder[i];
+			questionOrder[i] = questionOrder[position];
+			questionOrder[position] = temp;
+		}
+		System.out.println("");
+		for(int i=0;i<Qall;++i)
+			System.out.print(questionOrder[i]+" ");
+	}
+	
+//	private void score() {
+//		for(int i=0;i<Qall;++i) {
+//			answerInOrder[i] = 
+//		}
+//			
+//	}
 	
 	private void end(ActionEvent event) throws IOException {
 		System.out.println("end");
@@ -116,6 +151,8 @@ public class QuestionController {
 		stage.setScene(scene);
 		stage.show();
 	}
+	
+	
 	
 	@FXML
 	private void handleAbox() {
