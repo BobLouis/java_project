@@ -30,7 +30,7 @@ public class NoticeController {
 		root = loader.load();
 
 		QuestionController question = loader.getController();
-		question.nextQuestion();
+		question.nextQuestion(event);
 
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);

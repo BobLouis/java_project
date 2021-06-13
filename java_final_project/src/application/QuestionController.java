@@ -28,6 +28,10 @@ public class QuestionController {
 	@FXML
 	private CheckBox Dbox;
 	
+	private Stage stage;
+	private Scene scene;
+	private Parent root;
+	
 	//question[i][0] = question 
 	//question[i][1~4] = option ABCD
 	String[][] question = {
@@ -57,15 +61,32 @@ public class QuestionController {
 	private int Qcount = 0;
 	
 	
-	public void nextQuestion() throws IOException {
-		System.out.println("next question");
-		System.out.println(question[0][1]);
+	public void nextQuestion(ActionEvent event) throws IOException {
+		if(Qcount>=Qall) {
+			end(event);
+		}
 		Qnumber.setText("Question "+(++Qcount)+"/"+(Qall));
-		Qarea.setText(question[Qcount][0]);
-		Abox.setText(question[Qcount][1]);
-		Bbox.setText(question[Qcount][2]);
-		Cbox.setText(question[Qcount][3]);
-		Dbox.setText(question[Qcount][4]);
+		if(Qcount<Qall) {
+			Qarea.setText(question[Qcount-1][0]);
+			Abox.setText(question[Qcount-1][1]);
+			Bbox.setText(question[Qcount-1][2]);
+			Cbox.setText(question[Qcount-1][3]);
+			Dbox.setText(question[Qcount-1][4]);
+		}
+	}
+	
+	private void end(ActionEvent event) throws IOException {
+		System.out.println("end");
+		
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("End.fxml"));
+		root = loader.load();
+		EndController end = loader.getController();
+		end.setScore(90.0);
+
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
 	
 	@FXML
