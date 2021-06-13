@@ -93,12 +93,14 @@ public class QuestionController {
 			Dbox.setSelected(false);
 
 			Qnumber.setText("Question "+(Qcount)+"/"+(Qall));
-			if(Qcount<Qall) {
+			if(Qcount<=Qall) {
+//				System.out.println(Qcount);
 				Qarea.setText(question[questionOrder[Qcount-1]][0]);
 				Abox.setText (question[questionOrder[Qcount-1]][1]);
 				Bbox.setText (question[questionOrder[Qcount-1]][2]);
 				Cbox.setText (question[questionOrder[Qcount-1]][3]);
 				Dbox.setText (question[questionOrder[Qcount-1]][4]);
+				System.out.println(questionOrder[Qcount-1]);
 			}
 			isStart = false;
 		}else {
@@ -144,17 +146,17 @@ public class QuestionController {
 		}
 		
 		result = ((double)correct/(double)Qall)*100;
-		System.out.println("score");
+		System.out.print("\nscore");
 		System.out.println(result);
 		System.out.println("your answer");
 		for(int i=0;i<Qall;++i)
 			System.out.print(inputOptionArr[i]+" ");
 		System.out.println("correct answer");
 		for(int i=0;i<Qall;++i)
-			System.out.print(answerInOrder[i]);
+			System.out.print(answerInOrder[i]+" ");
 		System.out.println("correct condition");
 		for(int i=0;i<Qall;++i)
-			System.out.print(correctArr[i]);
+			System.out.print(correctArr[i]+" ");
 		return result;
 	}
 	
