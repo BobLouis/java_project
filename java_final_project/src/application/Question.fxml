@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.QuestionController">
+   <children>
+      <TextArea fx:id="Qarea" editable="false" layoutX="14.0" layoutY="56.0" prefHeight="109.0" prefWidth="580.0">
+         <font>
+            <Font size="25.0" />
+         </font></TextArea>
+      <CheckBox fx:id="Abox" layoutX="25.0" layoutY="183.0" mnemonicParsing="false" onAction="#handleAbox" text="CheckBox">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="Bbox" layoutX="25.0" layoutY="226.0" mnemonicParsing="false" onAction="#handleBbox" text="CheckBox">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="Cbox" layoutX="25.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleCbox" text="CheckBox">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="Dbox" layoutX="25.0" layoutY="318.0" mnemonicParsing="false" onAction="#handleDbox" text="CheckBox">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </CheckBox>
+      <Button layoutX="471.0" layoutY="334.0" mnemonicParsing="false" onAction="#nextQuestion" prefHeight="37.0" prefWidth="90.0" text="Next">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Label fx:id="Qnumber" layoutX="30.0" layoutY="5.0" prefHeight="41.0" prefWidth="215.0" text="Question">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
