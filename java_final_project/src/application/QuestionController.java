@@ -63,9 +63,10 @@ public class QuestionController {
 	private int Qall = answer.length;
 	private int Qcount = 0;
 	int inputOption = 0;
-	int inputOptionArr[] = new int[Qall];
-	int questionOrder[]  = new int[Qall];
-	int answerInOrder[]  = new int[Qall]; 
+	int inputOptionArr[] = new int[Qall];  //record user input answer
+	int questionOrder[]  = new int[Qall];  //random question order
+	int answerInOrder[]  = new int[Qall];  //answer in the order
+	int correctArr[]     = new int[Qall];  //record the answering condition 1->correct 0->incorrect
 	private boolean isStart = true;
 		
 	
@@ -82,11 +83,7 @@ public class QuestionController {
 			inputOption = 0;  //reset the inputOption 0-> no input
 			Caution.setText("");
 			if(Qcount>Qall) {
-				System.out.println("");
-				for(int i=0;i<Qall;++i)
-					System.out.print(inputOptionArr[i]+"");
-				
-				
+				score();
 				end(event);
 			}
 			//reset all the option
@@ -130,12 +127,36 @@ public class QuestionController {
 			System.out.print(questionOrder[i]+" ");
 	}
 	
-//	private void score() {
-//		for(int i=0;i<Qall;++i) {
-//			answerInOrder[i] = 
-//		}
-//			
-//	}
+	private double score() {
+		int correct = 0;
+		double result = 0;
+		for(int i=0;i<Qall;++i) {
+			answerInOrder[i] = answer[questionOrder[i]];
+		}
+		
+		for(int i=0 ; i<Qall;++i) {
+			if(inputOptionArr[i] == answerInOrder[i]) {
+				++correct;
+				correctArr[i] = 1;
+			}else {
+				correctArr[i] = 0;
+			}
+		}
+		
+		result = ((double)correct/(double)Qall)*100;
+		System.out.println("score");
+		System.out.println(result);
+		System.out.println("your answer");
+		for(int i=0;i<Qall;++i)
+			System.out.print(inputOptionArr[i]+" ");
+		System.out.println("correct answer");
+		for(int i=0;i<Qall;++i)
+			System.out.print(answerInOrder[i]);
+		System.out.println("correct condition");
+		for(int i=0;i<Qall;++i)
+			System.out.print(correctArr[i]);
+		return result;
+	}
 	
 	private void end(ActionEvent event) throws IOException {
 		System.out.println("end");
