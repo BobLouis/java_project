@@ -48,8 +48,6 @@ public class LoginController {
 		}
 		userExist = -1;
 		IdCorr = false;
-		System.out.println(student[0].getName());
-		System.out.println(student[0].getId());
 		String username = nameTextField.getText();
 		String Id = passwordTextField.getText();
 		
@@ -63,8 +61,8 @@ public class LoginController {
 			//user exist check the Id is correct
 			IdCorr = student[userExist].getId().equals(Id);
 		}
-		System.out.println(userExist);
-		System.out.println(IdCorr);
+		System.out.println("user log: "+userExist);
+		System.out.println("id: "+IdCorr);
 		if(userExist == -1) {
 			warningLabel.setText("user not exist!!");
 		}

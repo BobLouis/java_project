@@ -83,8 +83,7 @@ public class QuestionController {
 			inputOption = 0;  //reset the inputOption 0-> no input
 			Caution.setText("");
 			if(Qcount>Qall) {
-				score();
-				end(event);
+				end(event,score());
 			}
 			//reset all the option
 			Abox.setSelected(false);
@@ -94,18 +93,15 @@ public class QuestionController {
 
 			Qnumber.setText("Question "+(Qcount)+"/"+(Qall));
 			if(Qcount<=Qall) {
-//				System.out.println(Qcount);
 				Qarea.setText(question[questionOrder[Qcount-1]][0]);
 				Abox.setText (question[questionOrder[Qcount-1]][1]);
 				Bbox.setText (question[questionOrder[Qcount-1]][2]);
 				Cbox.setText (question[questionOrder[Qcount-1]][3]);
 				Dbox.setText (question[questionOrder[Qcount-1]][4]);
-				System.out.println(questionOrder[Qcount-1]);
 			}
 			isStart = false;
 		}else {
 			Caution.setText("Please choose a option");
-			System.out.println("Please choose a option");
 		}
 		
 	}
@@ -124,7 +120,7 @@ public class QuestionController {
 			questionOrder[i] = questionOrder[position];
 			questionOrder[position] = temp;
 		}
-		System.out.println("");
+		System.out.println("question order");
 		for(int i=0;i<Qall;++i)
 			System.out.print(questionOrder[i]+" ");
 	}
@@ -145,30 +141,32 @@ public class QuestionController {
 			}
 		}
 		
-		result = ((double)correct/(double)Qall)*100;
-		System.out.print("\nscore");
+		result = (int)(((double)correct/(double)Qall)*1000);
+		result /= 10;
+		System.out.print("\nscore: ");
 		System.out.println(result);
-		System.out.println("your answer");
+		
 		for(int i=0;i<Qall;++i)
 			System.out.print(inputOptionArr[i]+" ");
-		System.out.println("correct answer");
+		System.out.println("your answer");
+		
 		for(int i=0;i<Qall;++i)
 			System.out.print(answerInOrder[i]+" ");
-		System.out.println("correct condition");
+		System.out.println("correct answer");
+		
 		for(int i=0;i<Qall;++i)
 			System.out.print(correctArr[i]+" ");
+		System.out.println("correct condition");
+		
 		return result;
 	}
 	
-	private void end(ActionEvent event) throws IOException {
+	private void end(ActionEvent event,double score) throws IOException {
 		System.out.println("end");
-		
-		
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("End.fxml"));
 		root = loader.load();
 		EndController end = loader.getController();
-		end.setScore(90.0);
-
+		end.setScore(score);
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
