@@ -8,34 +8,39 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EndController">
    <children>
-      <Label fx:id="scoreLabel" layoutX="14.0" layoutY="14.0" prefHeight="71.0" prefWidth="353.0" text="Final Score">
+      <Label fx:id="scoreLabel" layoutX="23.0" prefHeight="71.0" prefWidth="353.0" text="Final Score">
          <font>
             <Font size="43.0" />
          </font>
       </Label>
-      <TextArea editable="false" layoutX="28.0" layoutY="183.0" prefHeight="84.0" prefWidth="544.0" text="the result file will be create in your destop after you press the finish.&#10;please send it  to TA bfore 12.00">
+      <TextArea editable="false" layoutX="28.0" layoutY="158.0" prefHeight="84.0" prefWidth="544.0" text="the result file will be create in your destop after you press the finish.&#10;please send it  to TA bfore 12.00&#10;please select your operating system">
          <font>
             <Font size="18.0" />
          </font>
       </TextArea>
-      <CheckBox fx:id="MacOsBox" layoutX="30.0" layoutY="92.0" mnemonicParsing="false" onAction="#handleMacbox" text="MacOs">
+      <CheckBox fx:id="MacOsBox" layoutX="30.0" layoutY="71.0" mnemonicParsing="false" onAction="#handleMacbox" text="MacOs">
          <font>
             <Font size="25.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="WindowsBox" layoutX="30.0" layoutY="142.0" mnemonicParsing="false" onAction="#handleWindowbox" text="Windows">
+      <CheckBox fx:id="WindowsBox" layoutX="30.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleWindowbox" text="Windows">
          <font>
             <Font size="25.0" />
          </font>
       </CheckBox>
-      <Button layoutX="249.0" layoutY="290.0" mnemonicParsing="false" onAction="#finishButton" text="Finish">
+      <Button layoutX="234.0" layoutY="252.0" mnemonicParsing="false" onAction="#finishButton" text="Finish">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Label fx:id="cautionLabel" layoutX="133.0" layoutY="356.0" prefHeight="30.0" prefWidth="454.0" text=" " textFill="#e42323">
+      <Label fx:id="cautionLabel" layoutX="73.0" layoutY="309.0" prefHeight="30.0" prefWidth="454.0" text=" " textFill="#e42323">
          <font>
             <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="finishLabel" layoutX="28.0" layoutY="339.0" prefHeight="30.0" prefWidth="544.0">
+         <font>
+            <Font size="18.0" />
          </font>
       </Label>
    </children>

@@ -21,6 +21,9 @@ public class EndController {
 	private CheckBox WindowsBox;
 	@FXML
 	private Label cautionLabel;
+	@FXML 
+	private Label finishLabel;
+	
 	
 	private int os = 0; //1->mac 2->window 
 	private double score = 0;
@@ -38,7 +41,6 @@ public class EndController {
 		} else {
 			os = 0;
 		}
-		
 	}
 	
 	@FXML
@@ -73,19 +75,21 @@ public class EndController {
 					out.write(encode); 
 					out.flush(); 
 					out.close();  
+					finishLabel.setText("The txt file has been create in your Desktop,send to TA before 12:00");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				
 			} else if (os == 2){
 				//window path
 				try {
-					File writename = new File(System.getProperty("user.home") + "/Desktop/output.txt"); 
+					File writename = new File(System.getProperty("user.home") + "/Desktop/"+Id+".txt"); 
 					writename.createNewFile(); 
 					BufferedWriter out = new BufferedWriter(new FileWriter(writename));
 					out.write(encode); 
 					out.flush(); 
 					out.close(); 
-					
+					finishLabel.setText("The txt file has been create in your Desktop,\nsend to TA before 12:00");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

@@ -18,8 +18,8 @@ public class Encode {
 			++i;
 			++i_key;
 		}
-		System.out.println("origin:"+"\n"+origin+"\nencode:");
-		System.out.println(String.valueOf(encode_ch));
+//		System.out.println("origin:"+"\n"+origin+"\nencode:");
+//		System.out.println(String.valueOf(encode_ch));
 		return String.valueOf(encode_ch);
 	}
 	
@@ -36,8 +36,8 @@ public class Encode {
 			++i;
 			++i_key;
 		}
-		System.out.println("decode:");
-		System.out.println(String.valueOf(decode_ch));
+//		System.out.println("decode:");
+//		System.out.println(String.valueOf(decode_ch));
 		return String.valueOf(decode_ch);
 	}
 }
