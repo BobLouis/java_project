@@ -28,9 +28,6 @@ public class LoginController {
 	@FXML
 	Label warningLabel;
 	
-	
-		
-	
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
@@ -38,7 +35,7 @@ public class LoginController {
 	private final static int userNum = 10;
 	private int userExist = -1;
 	private boolean IdCorr = false;
-	
+	private static String userId = null; 
 	
 	public void login(ActionEvent event) throws IOException {
 		ExcelReader rc=new ExcelReader();
@@ -60,6 +57,8 @@ public class LoginController {
 		if (userExist > -1) {
 			//user exist check the Id is correct
 			IdCorr = student[userExist].getId().equals(Id);
+			if(IdCorr == true)
+				userId = student[userExist].getId();
 		}
 		System.out.println("user log: "+userExist);
 		System.out.println("id: "+IdCorr);
@@ -83,6 +82,9 @@ public class LoginController {
 			stage.setScene(scene);
 			stage.show();
 		}
-		
+	}
+	
+	public static String getId() {
+		return userId;
 	}
 }

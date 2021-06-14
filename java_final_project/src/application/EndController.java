@@ -10,7 +10,6 @@ import java.io.PrintWriter;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
-
 public class EndController {
 	
 	
@@ -24,9 +23,10 @@ public class EndController {
 	private Label cautionLabel;
 	
 	private int os = 0; //1->mac 2->window 
-	
+	private double score = 0;
 	public void setScore(double score) {
 		scoreLabel.setText("Score: "+score);
+		this.score = score;
 	}
 	
 	
@@ -53,6 +53,13 @@ public class EndController {
 	
 	@FXML
 	private void finishButton() {
+		String Id = LoginController.getId();
+		System.out.println(Id+"_"+score);
+		Encode code = new Encode();
+		String encode = code.encode(Id+"_"+score);
+//		String decode = code.decode(encode);
+//		System.out.println(encode);
+//		System.out.println(decode);
 		if(os == 0) {
 			cautionLabel.setText("Please select your operating system");
 		} else {
@@ -60,24 +67,24 @@ public class EndController {
 			if (os == 1) {
 				//mac path
 				try {
-					File writename = new File(System.getProperty("user.home") + "/Desktop/output.txt"); // 相對路徑，如果沒有則要建立一個新的output。txt檔案
-					writename.createNewFile(); // 建立新檔案
+					File writename = new File(System.getProperty("user.home") + "/Desktop/"+Id+".txt"); 
+					writename.createNewFile(); 
 					BufferedWriter out = new BufferedWriter(new FileWriter(writename));
-					out.write("我會寫入檔案啦\r\n"); // \r\n即為換行
-					out.flush(); // 把快取區內容壓入檔案
-					out.close(); // 最後記得關閉檔案
+					out.write(encode); 
+					out.flush(); 
+					out.close();  
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			} else if (os == 2){
 				//window path
 				try {
-					File writename = new File(System.getProperty("user.home") + "/Desktop/output.txt"); // 相對路徑，如果沒有則要建立一個新的output。txt檔案
-					writename.createNewFile(); // 建立新檔案
+					File writename = new File(System.getProperty("user.home") + "/Desktop/output.txt"); 
+					writename.createNewFile(); 
 					BufferedWriter out = new BufferedWriter(new FileWriter(writename));
-					out.write("我會寫入檔案啦\r\n"); // \r\n即為換行
-					out.flush(); // 把快取區內容壓入檔案
-					out.close(); // 最後記得關閉檔案
+					out.write(encode); 
+					out.flush(); 
+					out.close(); 
 					
 				} catch (Exception e) {
 					e.printStackTrace();
