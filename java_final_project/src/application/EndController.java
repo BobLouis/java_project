@@ -78,6 +78,7 @@ public class EndController {
 					out.write("我會寫入檔案啦\r\n"); // \r\n即為換行
 					out.flush(); // 把快取區內容壓入檔案
 					out.close(); // 最後記得關閉檔案
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
