@@ -58,7 +58,7 @@ public class QuestionController {
 			
 	};
 	
-	int[] answer = {1};//2,3,4  ,4,3,4 ,4,1,3 ,2,2,4};
+	int[] answer = {1,2,3,4  ,4,3,4 ,4,1,3 ,2,2,4};
 	private int Qall = answer.length;
 	private int Qcount = 0;
 	int inputOption = 0;
@@ -181,6 +181,8 @@ public class QuestionController {
 			Bbox.setSelected(false);
 			Cbox.setSelected(false);
 			Dbox.setSelected(false);
+		} else {
+			inputOption = 0;
 		}
 	}
 	
@@ -191,6 +193,8 @@ public class QuestionController {
 			Abox.setSelected(false);
 			Cbox.setSelected(false);
 			Dbox.setSelected(false);
+		} else {
+			inputOption = 0;
 		}
 	}
 	
@@ -201,6 +205,8 @@ public class QuestionController {
 			Bbox.setSelected(false);
 			Abox.setSelected(false);
 			Dbox.setSelected(false);
+		} else {
+			inputOption = 0;
 		}
 	}
 	
@@ -211,6 +217,8 @@ public class QuestionController {
 			Bbox.setSelected(false);
 			Cbox.setSelected(false);
 			Abox.setSelected(false);
+		} else {
+			inputOption = 0;
 		}
 	}
 	
