@@ -18,20 +18,25 @@
             <Font size="18.0" />
          </font>
       </TextArea>
-      <CheckBox layoutX="30.0" layoutY="92.0" mnemonicParsing="false" text="MacOs">
+      <CheckBox fx:id="MacOsBox" layoutX="30.0" layoutY="92.0" mnemonicParsing="false" onAction="#handleMacbox" text="MacOs">
          <font>
             <Font size="25.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="30.0" layoutY="142.0" mnemonicParsing="false" text="Windows">
+      <CheckBox fx:id="WindowsBox" layoutX="30.0" layoutY="142.0" mnemonicParsing="false" onAction="#handleWindowbox" text="Windows">
          <font>
             <Font size="25.0" />
          </font>
       </CheckBox>
-      <Button layoutX="249.0" layoutY="290.0" mnemonicParsing="false" text="Finish">
+      <Button layoutX="249.0" layoutY="290.0" mnemonicParsing="false" onAction="#finishButton" text="Finish">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
+      <Label fx:id="cautionLabel" layoutX="133.0" layoutY="356.0" prefHeight="30.0" prefWidth="454.0" text=" " textFill="#e42323">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
