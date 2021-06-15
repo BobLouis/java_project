@@ -55,11 +55,15 @@ public class WriteFile {
 		HSSFWorkbook workbook = new HSSFWorkbook();
         HSSFSheet sheet = workbook.createSheet("Java Books");
          
-        Object bookData[][] = new Object[10][3];
+        Object bookData[][] = new Object[studentNum+1][3];
+        bookData[0][0] = "Name";
+        bookData[0][1] = "Student ID";
+        bookData[0][2] = "Grade";
+        
         for(int i=0;i<studentNum;++i) {
-        	bookData[i][0] = student[i].getName();
-        	bookData[i][1] = student[i].getId();
-        	bookData[i][2] = student[i].getGrade();
+        	bookData[i+1][0] = student[i].getName();
+        	bookData[i+1][1] = student[i].getId();
+        	bookData[i+1][2] = student[i].getGrade();
         }
  
         int rowCount = 0;
