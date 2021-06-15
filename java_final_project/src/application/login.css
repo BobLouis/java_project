@@ -1,0 +1,9 @@
+
+
+#warningLabel{
+ -fx-font-size: 25;
+ -fx-font-family: "Lucida Console";
+ -fx-text-fill: "red";
+ -fx-alignment: center;
+}
+

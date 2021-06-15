@@ -21,9 +21,14 @@
          </font>
       </Label>
       <TextField fx:id="passwordTextField" layoutX="272.0" layoutY="202.0" />
-      <Label fx:id="warningLabel" layoutX="272.0" layoutY="230.0" prefHeight="27.0" prefWidth="297.0" textFill="#ee1d1d">
+      <Label fx:id="warningLabel" layoutY="230.0" prefHeight="27.0" prefWidth="600.0" textFill="#ee1d1d">
          <font>
             <Font size="18.0" />
          </font></Label>
+      <Label layoutX="166.0" layoutY="39.0" text="PD2 Final Exam">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
